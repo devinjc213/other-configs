@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_DIR="$HOME/drive/dashboard-laravel"
+BASE_DIR="$HOME/path/to/repo"
 frontend="frontend"
 backend="backend"
 utils="utils"
@@ -10,7 +10,7 @@ UTLSEXISTS=$(tmux list-sessions | grep $utils)
 
 tmux rename-session -t $(tmux display-message -p '#S') 'editor'
 tmux rename-window -t editor:0 'vim'
-tmux send-keys -t editor:0 'cd ~/drive/dashboard-laravel' C-m
+tmux send-keys -t editor:0 'cd ~/path/to/repo' C-m
 tmux send-keys -t editor:0 'vim .' C-m
 
 if [ "$FRONTENDEXISTS" = "" ]
